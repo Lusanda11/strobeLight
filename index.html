@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <style>
+            html
+            {
+                height: 100%;
+            }
+
+            body
+            {
+                height: 100%;
+                margin: 0;
+            }
+
+            .lightOn
+            {
+                background: white;
+            }
+
+            .lightOff
+            {
+                background: black;
+            }
+        </style>
+
+        <script>
+            class strobe
+            {
+                constructor ()
+                {
+                    setInterval(()=>
+                    {
+                        let status = document.body.getAttribute("class");
+                        document.body.className = ( (status=="lightOff") ? "lightOn" : "lightOff" );
+                    }, 50);
+                }
+            }
+
+            new strobe();
+        </script>
+    </head>
+    <body class="lightOff">
+
+    </body>
+</html>
